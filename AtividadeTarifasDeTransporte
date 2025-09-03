@@ -1,0 +1,74 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.tarifasdetransporte;
+import java.util.Scanner;
+/**
+ *
+ * @author FATEC ZONA LESTE
+ */
+public class TarifasDeTransporte {//Nome do programa
+
+    public static void main(String[] args) { 
+        Scanner scanner = new Scanner(System.in);
+        
+        try{//Abri o try para evitar erro 
+        
+          System.out.println("Escolha o seu meio de transporte:");
+          System.out.println("Digite 1 para Ônibus Urbano (R$ 4,40)");
+          System.out.println("Digite 2 para Metrô (R$ 5,00)");
+          System.out.println("Digite 3 para Trem Intermunicipal (R$ 6,50)");
+          System.out.println("Digite 4 para Ônibus Rodoviário (R$ 12,00)");
+          System.out.print("Digite a sua escolha: ");
+         //abri caixa de texto para o usuário
+
+        int escolha = scanner.nextInt(); // 
+        
+          System.out.println("Digite a quantidade:");
+
+        int quantidade = scanner.nextInt();
+        
+        double preco;//Adicionei o double pra calcular qualquer tipo de número
+        double total;
+        
+           switch (escolha) { //Acrescentei o switch para abrir a escolha
+                case 1:
+                    preco= 4.40;
+                    total = preco * quantidade;// Aqui o programa calcula o que o usuário escolheu, com a quantiadade que ele precisa 
+                    System.out.println("Você escolheu Ônibus Urbano.");
+                    System.out.println("Total a pagar: R$ " + total);//Logo aparece o resultado do produto
+                    break;//E fechei no break pra não começar outro case
+                case 2:
+                    preco = 5.00;
+                    total = preco * quantidade;
+                    System.out.println("Você escolheu Metrô.");
+                    System.out.println("Total a pagar: R$ " + total);
+                    break;
+                case 3:
+                    preco = 6.50;
+                    total = preco * quantidade;
+                    System.out.println("Você escolheu Trem Intermunicipal.");
+                    System.out.println("Total a pagar: R$ " + total);
+                    break;
+                case 4:
+                    preco = 12.00;
+                    total = preco * quantidade;
+                    System.out.println("Você escolheu Ônibus Rodoviário.");
+                    System.out.println("Total a pagar: R$ " + total);
+                    break;
+//Depois repeti tudo em todos 
+                default://Coloquei o dafault caspo o usuário digite algum caractere menor que 1 e maior 4
+                    System.out.println("Opção inválida! Por favor, escolha um número entre 1 e 4."); 
+        }}//A mensagem de "erro" do programa, pra que a pessoa digite algo válido
+           
+           catch (Exception e) {//Coloquei o catch para caso o usuário coloque algo inválido o programa não irá cair.
+            System.out.println("Valor inválido!");
+
+    }
+        
+           finally {
+            System.out.println("Muito obrigada por utilizar o nosso programa!.");// E por último fechei o programa fechei programa com mensagem de agradecimento
+            scanner.close();}
+    }
+}
