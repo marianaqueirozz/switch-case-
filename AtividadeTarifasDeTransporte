@@ -2,8 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.tarifasdetransporte;
-import java.util.Scanner;
+package com.mycompany.tarifasdetransporte; // Nome do pacote
+import java.util.Scanner; // Importa o Scanner para ler dados do usuário
 /**
  *
  * @author FATEC ZONA LESTE
@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class TarifasDeTransporte {//Nome do programa
 
     public static void main(String[] args) { 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);// Cria o Scanner para entrada de dados
         
         try{//Abri o try para evitar erro 
         
@@ -23,35 +23,35 @@ public class TarifasDeTransporte {//Nome do programa
           System.out.print("Digite a sua escolha: ");
          //abri caixa de texto para o usuário
 
-        int escolha = scanner.nextInt(); // 
+        int escolha = scanner.nextInt(); // Aqui o programa lê a escolha do usuário 
         
           System.out.println("Digite a quantidade:");
 
-        int quantidade = scanner.nextInt();
+        int quantidade = scanner.nextInt(); // Aqui o programa lê a quantidade digitada pelo usuário 
         
         double preco;//Adicionei o double pra calcular qualquer tipo de número
         double total;
         
            switch (escolha) { //Acrescentei o switch para abrir a escolha
-                case 1:
+                case 1: // Caso escolha 1
                     preco= 4.40;
                     total = preco * quantidade;// Aqui o programa calcula o que o usuário escolheu, com a quantiadade que ele precisa 
                     System.out.println("Você escolheu Ônibus Urbano.");
                     System.out.println("Total a pagar: R$ " + total);//Logo aparece o resultado do produto
                     break;//E fechei no break pra não começar outro case
-                case 2:
+                case 2: // Caso escolha 2
                     preco = 5.00;
                     total = preco * quantidade;
                     System.out.println("Você escolheu Metrô.");
                     System.out.println("Total a pagar: R$ " + total);
                     break;
-                case 3:
+                case 3: // Caso escolha 3
                     preco = 6.50;
                     total = preco * quantidade;
                     System.out.println("Você escolheu Trem Intermunicipal.");
                     System.out.println("Total a pagar: R$ " + total);
                     break;
-                case 4:
+                case 4: // Caso escolha 4
                     preco = 12.00;
                     total = preco * quantidade;
                     System.out.println("Você escolheu Ônibus Rodoviário.");
@@ -64,11 +64,11 @@ public class TarifasDeTransporte {//Nome do programa
            
            catch (Exception e) {//Coloquei o catch para caso o usuário coloque algo inválido o programa não irá cair.
             System.out.println("Valor inválido!");
-
     }
         
-           finally {
+           finally { // Esse trecho sempre roda no final
             System.out.println("Muito obrigada por utilizar o nosso programa!.");// E por último fechei o programa fechei programa com mensagem de agradecimento
-            scanner.close();}
+            scanner.close(); // Fecha o Scanner
+           }
     }
 }
